@@ -12,7 +12,6 @@ router.get('/coin-details', async function (req, res) {
   try {
     const coinDetails = await getCoinDetails();
     res.send(coinDetails);
-
   } catch (error) {
     console.log(error)
     res.send('something went wrong' + error);

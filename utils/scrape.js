@@ -1,5 +1,6 @@
 /* Imports */
 const puppeteer = require('puppeteer');
+const { v4: uuidv4 } = require('uuid');
 
 /* Consts */
 const SUBREDDIT_URL = (reddit) => `https://old.reddit.com/r/${reddit}`;
@@ -46,7 +47,8 @@ const self = {
       }
     } while (results.length <= nr);
 
-    return results;
+    /* Do not return first two items as they are reddit posts */
+    return results.slice(2, results.length-2);
   },
 
   praseResults: async () => {
@@ -77,8 +79,11 @@ const self = {
         ];
       });
 
+      const id = uuidv4()
+
       if(promoted === null) {
         results.push({
+          id,
           title,
           rank,
           postTime,

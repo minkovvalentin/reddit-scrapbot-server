@@ -9,7 +9,7 @@ const coinDetailService =  {
   
     await initScraper();
     
-    const scrapeResults = await getResults(defaultsubreddit, 100);
+    const scrapeResults = await getResults(defaultsubreddit, 30);
   
     return scrapeResults;  
   }

@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/minkovvalentin/reddit-scrapbot-server#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.10",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
-    "puppeteer": "^9.1.1"
+    "puppeteer": "^9.1.1",
+    "uuid": "^8.3.2"
   }
 }
