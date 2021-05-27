@@ -78,6 +78,18 @@ const self = {
           promotedNode && promotedNode.innerText.trim()
         ];
       });
+      
+      title = title.replace(" (self.CryptoMoonShots)", "");
+      let regexNum = new RegExp('[0-9]+')
+      // remove any strings from comments var
+
+      if (regexNum.test(comments)) {
+        comments = comments.match(regexNum)[0];
+      }
+
+      // if (regexNum.test(score) === false) {
+      //   score = 'unknown'
+      // }
 
       const id = uuidv4()
 

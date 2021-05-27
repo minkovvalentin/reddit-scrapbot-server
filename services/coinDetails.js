@@ -3,15 +3,24 @@ const {
   getResults
 } = require('../utils/scrape');
 
+const {
+ getPosts
+} = require('../utils/redditBot');
+
+const defaultsubreddit = 'CryptoMoonShots'
+
 const coinDetailService =  {
-  getCoinDetails: async () => {
-    const defaultsubreddit = 'CryptoMoonShots'
+  getScrapeCoinDetails: async () => {
   
     await initScraper();
     
-    const scrapeResults = await getResults(defaultsubreddit, 30);
+    const scrapeResults = await getResults(defaultsubreddit, 90);
   
     return scrapeResults;  
+  },
+
+  getApiCoinDetails: async () => {
+    return await getPosts(defaultsubreddit, false, 100)  ; 
   }
 }
 
