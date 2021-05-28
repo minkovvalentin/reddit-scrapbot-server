@@ -14,13 +14,13 @@ const coinDetailService =  {
   
     await initScraper();
     
-    const scrapeResults = await getResults(defaultsubreddit, 90);
+    const scrapeResults = await getResults(defaultsubreddit, 300);
   
     return scrapeResults;  
   },
 
   getApiCoinDetails: async () => {
-    return await getPosts(defaultsubreddit, false, 100)  ; 
+    return await getPosts(defaultsubreddit, false, 200)  ; 
   }
 }
 
