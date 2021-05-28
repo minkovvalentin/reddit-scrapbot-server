@@ -9,6 +9,7 @@ app.use(cors())
 /* HTTP request logger middleware */
 app.use(morgan('tiny'))
 app.use(routes)
+app.use(express.json());
 
 app.listen(port, () => {
   console.log(`Server listening at port ${port}`)
